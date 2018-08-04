@@ -66,23 +66,36 @@ sudo apt-get install build-essential libssl-dev
 ~~~
 Once the prerequisite packages are installed, you can pull down the nvm installation script from the project's GitHub page. The version number may be different, but in general, you can download it with curl:
 
+~~~
 curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh -o install_nvm.sh
+~~
+
 And inspect the installation script with nano:
 
+~~~
 nano install_nvm.sh
+~~~
+
 Run the script with bash:
 
+~~~
 bash install_nvm.sh
+~~~
+
 It will install the software into a subdirectory of your home directory at ~/.nvm. It will also add the necessary lines to your ~/.profile file to use the file.
 
 To gain access to the nvm functionality, you'll need to log out and log back in again, or you can source the ~/.profile file so that your current session knows about the changes:
-
+~~~
 source ~/.profile
+~~~
+
 Now that you have nvm installed, you can install isolated Node.js versions.
 
 To find out the versions of Node.js that are available for installation, you can type:
-
+~~~
 nvm ls-remote
+~~~
+
 Output
 ...
          v8.5.0
@@ -97,39 +110,62 @@ Output
 ->      v8.9.4   (Latest LTS: Carbon)        
 
 As you can see, the newest LTS version at the time of this writing is v8.9.4. You can install that by typing:
-
+~~~
 nvm install 8.9.4
+~~~
 Usually, nvm will switch to use the most recently installed version. You can explicitly tell nvm to use the version we just downloaded by typing:
 
+~~~
 nvm use 8.9.4
+~~~
+
 When you install Node.js using nvm, the executable is called node. You can see the version currently being used by the shell by typing:
 
+~~~
 node -v
 Output
 v8.9.4
+~~~
 If you have multiple Node.js versions, you can see what is installed by typing:
 
+~~~
 nvm ls
+~~~
 If you wish to default one of the versions, you can type:
 
+~~~
 nvm alias default 8.9.4
+~~~
+
 This version will be automatically selected when a new session spawns. You can also reference it by the alias like this:
 
+~~~
 nvm use default
+~~~
+
 Each version of Node.js will keep track of its own packages and has npm available to manage these.
 
 You can have npm install packages to the Node.js project's ./node_modules directory by using the normal format. For example, for the express module:
 
+~~~
 npm install express
+~~~
+
 If you'd like to install it globally (making it available to the other projects using the same Node.js version), you can add the -g flag:
 
+
+~~~
 npm install -g express
-This will install the package in:
+~~~
 
-~/.nvm/node_version/lib/node_modules/package_name
-Installing globally will let you run the commands from the command line, but you'll have to link the package into your local sphere to require it from within a program:
+This will install the package in: ~/.nvm/node_version/lib/node_modules/package_name Installing globally will let you run the commands from the command line, but you'll have to link the package into your local sphere to require it from within a program: 
 
+
+~~~
 npm link express
+~~~
 You can learn more about the options available to you with nvm by typing:
 
+~~~
 nvm help
+~~~
