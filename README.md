@@ -51,7 +51,7 @@ sudo ln -s ~/vscode/VSCode-linux-x64/code /usr/local/bin/code
 ==> pip --version
 
 
-##10) Install node and npm using nvm
+## 10) Install node and npm using nvm
 
 How To Install Using NVM
 An alternative to installing Node.js through apt is to use a specially designed tool called nvm, which stands for "Node.js version manager". Rather than working at the operating system level, nvm works at the level of an independent directory within your home directory. This means that you can install multiple, self-contained versions of Node.js without affecting the entire system.
