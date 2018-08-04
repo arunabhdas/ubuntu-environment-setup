@@ -53,15 +53,17 @@ sudo ln -s ~/vscode/VSCode-linux-x64/code /usr/local/bin/code
 
 ## 10) Install node and npm using nvm
 
-How To Install Using NVM
+### How To Install Using NVM
 An alternative to installing Node.js through apt is to use a specially designed tool called nvm, which stands for "Node.js version manager". Rather than working at the operating system level, nvm works at the level of an independent directory within your home directory. This means that you can install multiple, self-contained versions of Node.js without affecting the entire system.
 
 Controlling your environment with nvm allows you to access the newest versions of Node.js and retain and manage previous releases. It is a different utility from apt-get, however, and the versions of Node.js that you manage through it are distinct from the distro-stable version of Node.js available from the Ubuntu repositories.
 
 To start off, we'll need to get the software packages from our Ubuntu repositories that will allow us to build source packages. The nvm script will leverage these tools to build the necessary components:
 
+~~~
 sudo apt-get update
 sudo apt-get install build-essential libssl-dev
+~~~
 Once the prerequisite packages are installed, you can pull down the nvm installation script from the project's GitHub page. The version number may be different, but in general, you can download it with curl:
 
 curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh -o install_nvm.sh
