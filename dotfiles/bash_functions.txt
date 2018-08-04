@@ -1,0 +1,46 @@
+# This file is sourced from .bashrc
+
+# Setting PATH for Python 3.5
+# The original version is saved in .bash_profile.pysave
+
+function parse_git_branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+
+alias laptop='bash <(curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)'
+
+
+
+function whatsearchandreplace () {
+	echo "find ./ -type f -exec sed -i '' -e 's/<search_string>/<replace_string>/' {} \;"
+}
+
+
+alias svnshowcommands="echo -e '${COLOR_BROWN}Available commands: 
+   ${COLOR_GREEN}svn
+   ${COLOR_GREEN}svn${COLOR_NC}help
+   ${COLOR_GREEN}svn${COLOR_NC}import    ${COLOR_GRAY}Example: import ~/projects/my_local_folder http://svn.foo.com/bar
+   ${COLOR_GREEN}svn${COLOR_NC}checkout  ${COLOR_GRAY}Example: svcheckout http://svn.foo.com/bar
+   ${COLOR_GREEN}svn${COLOR_NC}status    
+   ${COLOR_GREEN}svn${COLOR_NC}status${COLOR_GREEN}on${COLOR_NC}server
+   ${COLOR_GREEN}svn${COLOR_NC}add       ${COLOR_GRAY}Example: svadd your_file
+   ${COLOR_GREEN}svn${COLOR_NC}add${COLOR_GREEN}all${COLOR_NC}    ${COLOR_GRAY}Note: adds all files not in repository [recursively]
+   ${COLOR_GREEN}svn${COLOR_NC}delete    ${COLOR_GRAY}Example: svdelete your_file
+   ${COLOR_GREEN}svn${COLOR_NC}diff      ${COLOR_GRAY}Example: svdiff your_file
+   ${COLOR_GREEN}svn${COLOR_NC}commit    ${COLOR_GRAY}Example: svcommit
+   ${COLOR_GREEN}svn${COLOR_NC}update    ${COLOR_GRAY}Example: svupdate
+   ${COLOR_GREEN}svn${COLOR_NC}get${COLOR_GREEN}info${COLOR_NC}   ${COLOR_GRAY}Example: svgetinfo your_file
+   ${COLOR_GREEN}svn${COLOR_NC}blame     ${COLOR_GRAY}Example: svblame your_file
+'"
+
+function whatcleanxcodecache() {
+	echo 'rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang/ModuleCache"'
+	echo 'rm -rf ~/Library/Developer/Xcode/DerivedData'
+	echo 'rm -rf ~/Library/Caches/com.apple.dt.Xcode'
+}
+
+export PS1="\[\033[32m\]\w\$(parse_git_branch)\[\033[00m\] 
+==> "
+
+

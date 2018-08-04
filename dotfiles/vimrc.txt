@@ -1,0 +1,49 @@
+syntax on
+filetype plugin indent on
+autocmd vimenter * if !argc() | NERDTree | endif
+
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Courier\ New\ 11
+  elseif has("gui_photon")
+    set guifont=Courier\ New:s11
+  elseif has("gui_kde")
+    set guifont=Courier\ New/11/-1/5/50/0/0/0/1/0
+  elseif has("x11")
+    set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
+  else
+    set guifont=Courier_New:h11:cDEFAULT
+  endif
+endif
+
+colorscheme murphy
+
+:set guioptions-=T
+
+se nu
+" set guifont=Monospace\ 9 
+set guifont=Monospace\ 11 
+nmap <F8> :TagbarToggle<CR>
+
+:set autoindent
+
+
+:set cindent
+" The width of a TAB is set to 2.
+" Still it is a \t. It is just that
+" Vim will interpret it to be having
+" a width of 2.
+:set tabstop=2
+" Indents will have a width of 2 
+:set shiftwidth=2
+" Sets the number of columns for a TAB
+set softtabstop=2
+" Expand TABs to spaces
+:set expandtab
+
+set formatoptions-=t
+
+:filetype plugin on
+
+:set paste
+

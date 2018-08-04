@@ -1,0 +1,39 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "window.zoomLevel": 1,
+    "workbench.statusBar.visible": true,
+    "workbench.startupEditor": "newUntitledFile",
+    // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
+    // "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": false,
+    // Enable/disable default JavaScript formatter (For Prettier)
+    "javascript.format.enable": false,
+    // Use 'prettier-eslint' instead of 'prettier'. Other settings will only be fallbacks in case they could not be inferred from eslint rules.
+    "prettier.eslintIntegration": false,
+    "editor.insertSpaces": true,
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[vue]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "eslint.options": {
+        "extensions": [".html", ".js", ".vue", ".jsx"]
+    },
+    "eslint.validate": [
+        {
+            "language": "html",
+            "autoFix": true
+        },
+        {
+            "language": "vue",
+            "autoFix": true
+        },
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+    ]
+}
